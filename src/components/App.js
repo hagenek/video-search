@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import youtube from '../apis/youtube';
 import VideoList from "./VideoList"
 
-const KEY = "AIzaSyBrVKLvCxNvI31MXpScpnm1phMzUfeck0M"
+import KEY from "./key"
 
 class App extends React.Component {
 
