@@ -3,6 +3,8 @@ import SearchBar from "./SearchBar";
 import youtube from '../apis/youtube';
 import VideoList from "./VideoList"
 
+
+// Poor attempt to hide my API key
 import KEY from "./key"
 
 class App extends React.Component {
