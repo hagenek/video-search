@@ -1,18 +1,37 @@
 import React from "react";
 
-class VideoDetail extends React.Component {
+const VideoDetail = ({ video, firstVideo }) => {
 
-    state = null;
-
-render() {
-    return (
-        <div className="search-bar ui segment">
-            <form onSubmit={this.onFormSubmit} className="ui form">
-                <div className="field">
-                    <label>Video Search</label>
-                    <input type="text" value={this.state.term} onChange={this.onInputChange}></input>
+    if (video) {
+        const videoSrc = `https://youtube.com/embed/${video.id.videoId}`
+        return (
+            <div>
+                <div className="ui embed">
+                <iframe src={videoSrc} title="Video Player"/>
                 </div>
-            </form>
-        </div>
-    )
+            <div className="ui segment">
+                <h4 className="ui header">{video.snippet.title}</h4>
+                <p>{video.snippet.description}</p>
+            </div>
+            </div>
+        )
+    }
+     if (firstVideo) {
+        const videoSrc = `https://youtube.com/embed/${firstVideo.id.videoId}`
+        return (
+            <div>
+                <div className="ui embed">
+                <iframe src={videoSrc} title="Video Player"/>
+                </div>
+            <div className="ui segment">
+                <h4 className="ui header">{firstVideo.snippet.title}</h4>
+                <p>{firstVideo.snippet.description}</p>
+            </div>
+            </div>
+        )}
+
+    return <div>Loading...</div>   
 }
+
+    export default VideoDetail
+
